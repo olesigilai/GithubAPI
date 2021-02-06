@@ -9,9 +9,10 @@ import { Repository } from '../repository'
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-users?:User[];
-repository?:Repository;
-  constructor(userService:User,gitService:GitService,private http:HttpClient) {
+users:User;
+userRep?:Repository;
+
+  constructor(private userService:User,gitService:GitService,private http:HttpClient) {
     this.users=userService
    }
 
