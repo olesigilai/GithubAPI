@@ -1,1 +1,13 @@
 <p>user works!</p>
+<input name="title" #searchTerm>
+
+<button (click)="performSearch(searchTerm)">Search</button>
+<!-- <p>{{users.login}}</p>> -->
+
+<div *ngIf = 'user'>
+<h1>Username: {{user.login}}</h1>
+<h1>Bio: {{user.bio}}</h1>
+<h1>Followers: {{user.followers}}</h1>
+<h1>Following: {{user.following}}</h1>
+</div>
+

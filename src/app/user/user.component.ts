@@ -9,14 +9,22 @@ import { Repository } from '../repository'
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-users:User;
+user?:User;
 userRep?:Repository;
 
-  constructor(private userService:User,gitService:GitService,private http:HttpClient) {
-    this.users=userService
+  constructor(private gitService:GitService,private http:HttpClient) {
+  
    }
 
   ngOnInit(): void {
+    // this.performSearch('DorcasToto')
   }
 
+  performSearch(searchTerm:any) {
+    this.gitService.userRequest(searchTerm).then((success)=>{
+      this.user = this.gitService.user
+      console.log(this.user.bio)
+    })
+      
+  }
 }
