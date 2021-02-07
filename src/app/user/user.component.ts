@@ -10,7 +10,7 @@ import { Repository } from '../repository'
 })
 export class UserComponent implements OnInit {
 user?:User;
-userRep:Repository;
+userRep:any;
 
   constructor(private gitService:GitService) {
     this.userRep = new Repository('', '', '', '');
