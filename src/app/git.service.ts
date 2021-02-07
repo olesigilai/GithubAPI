@@ -33,13 +33,7 @@ export class GitService {
     let final_url =
       environment.apiUrl + search_term + '?access_token=' + environment.apiKey;
     let promise = new Promise((resolve, reject) => {
-      this.http
-        .get<ApiResponse>(final_url)
-        .toPromise()
-        .then(
-          (response) => {
-            this.user = response;
-
+      this.http.get<ApiResponse>(final_url).toPromise().then((response) => { this.user = response;
             
             resolve();
           },
