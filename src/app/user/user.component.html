@@ -1,11 +1,11 @@
-<app-form></app-form>
-<input name="title" #searchTerm>
 
-<button (click)="performSearch(searchTerm)">Search</button>
+<div class="container">
+<!-- <input name="title" #searchTerm>
+<button (searchProf )="performSearch(searchTerm)">Search</button> -->
 <!-- <p>{{users.login}}</p> -->
 
+<app-form (searchProf)="performSearch($event)"></app-form>
 <div *ngIf = 'user'>
-
     <div class="row">
         <div class="col-sm">
             <div class=" testimonial-card">
@@ -21,37 +21,67 @@
             <div class=" testimonial-card">
 
                 <div class="card-body">
-                    <h4 class="card-title">{{user.login}}</h4>
+                    <h4 class="card-title" style=" text-align:center">{{user.login}}</h4>
                     <hr>
+                    <div  style="text-align: center;">
+                <p>Bio</p>
                     <p>{{user.bio}}</p>
+                    </div>
+                    <hr>
                     <div class="row">
                         <div class="col-sm">
-                            {{user.followers}}<p>followers</p>
+                            <p>followers</p>
+                            {{user.followers}}
                         </div>
                         <div class="col-sm">
-                            {{user.following}}<p>following</p>
+                            <p>following</p>
+                            {{user.following}}
                         </div>
                         <div class="col-sm">
+                            <p>Email</p>
                             {{user.email}}
                         </div>
                         <div class="col-sm">
-                            {{user.location}}
+                            <p>Location</p>{{user.location}}
                         </div>
                     </div>
-                    <!-- {{user.location}} -->
-                </div>
+                    </div>
             </div>
         </div>
     </div>
 
-<!-- <h1>Username: {{user.login}}</h1>
-<h1>Bio: {{user.bio}}</h1>
-<h1>Followers: {{user.followers}}</h1>
-<h1>Following: {{user.following}}</h1>
-<h1>Location: {{user.location}}</h1> -->
-<!-- <h1>Email: {{user.email}}</h1>
-<h1>public_repos: {{user.public_repos}}</h1>
-<h1>public_gists: {{user.public_gists}}</h1>
-<h1>Url link: {{user.url}}</h1> -->
+    <div class=" testimonial-card">
+
+        <div class="card-body">
+            <h4 class="card-title" style=" text-align:center">{{Repo.}}</h4>
+            <hr>
+            <div  style="text-align: center;">
+        <p>Bio</p>
+            <p>{{user.bio}}</p>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm">
+                    <p>followers</p>
+                    {{user.followers}}
+                </div>
+                <div class="col-sm">
+                    <p>following</p>
+                    {{user.following}}
+                </div>
+                <div class="col-sm">
+                    <p>Email</p>
+                    {{user.email}}
+                </div>
+                <div class="col-sm">
+                    <p>Location</p>{{user.location}}
+                </div>
+            </div>
+            </div>
+    </div>
 </div>
+</div>
+
+
+
 
