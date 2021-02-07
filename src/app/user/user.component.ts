@@ -10,10 +10,10 @@ import { Repository } from '../repository'
 })
 export class UserComponent implements OnInit {
 user?:User;
-userRep?:Repository;
+userRep:Repository;
 
-  constructor(private gitService:GitService,private http:HttpClient) {
-  
+  constructor(private gitService:GitService) {
+    this.userRep = new Repository('', '', '', '');
    }
    performSearch(searchTerm:any) {
     this.gitService.userRequest(searchTerm).then((success)=>{

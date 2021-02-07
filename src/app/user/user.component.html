@@ -49,28 +49,29 @@
             </div>
         </div>
     </div>
+</div>
     <div class="row">
-        <div class="col-md-4" *ngFor="let userRep of userRep">
+        <div class="col-md-4" *ngFor="let repo of userRep">
             <div class=" testimonial-card" >
 
 
                 <div class="card-body">
-                    <h4 class="card-title" style=" text-align:center">{{userRep.name}}</h4>
+                    <h4 class="card-title" style=" text-align:center">{{repo.name}}</h4>
                     <hr>
                     <div  style="text-align: center;">
-                       <p>{{userRep.html_url}}</p>
+                       <p>{{repo.html_url}}</p>
                     </div>
                     <hr>
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-sm">
                             <p>followers</p>
-                            {{userRep.language}}
+                            {{repo.language}}
                         </div>
-                        </div>
+                        </div> -->
                     </div>
             </div>
         </div>
     </div>
     
-</div>
+
 </div>

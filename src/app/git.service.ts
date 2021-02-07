@@ -40,20 +40,7 @@ export class GitService {
           (response) => {
             this.user = response;
 
-            // let avatar_url = response.avatar_url
-            // let name = response.login
-            // let bio= response.bio
-            // let public_repos = response.public_repos
-            // let public_gists = response.public_gists
-            // let followers = response.followers
-            // let following = response.following
-            // let url = response.url
-            // let location = response.location
-            // let email = response.email
-            // let userr= new User(avatar_url,name,bio,public_repos,public_gists,followers,following,url,location,email)
-
-            // this.userProfile.push(userr)
-            // console.log(this.userProfile)
+            
             resolve();
           },
           (error) => {
@@ -73,7 +60,7 @@ displayRepos(user:any) {
 
   }
   
-
+  
   let url = environment.apiUrl  + user + '/repos' + '?access_token=' + environment.apiKey;
   let promise = new Promise((resolve, reject) => {
     this.http.get<apiResponse>(url).toPromise().then(response => {
