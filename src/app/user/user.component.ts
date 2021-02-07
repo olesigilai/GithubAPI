@@ -15,17 +15,24 @@ userRep?:Repository;
   constructor(private gitService:GitService,private http:HttpClient) {
   
    }
-
+   performSearch(searchTerm:any) {
+    this.gitService.userRequest(searchTerm).then((success)=>{
+      this.user = this.gitService.user
+    })
+    
+    this.gitService.displayRepos(searchTerm).then((success) => {
+      this.userRep = this.gitService.userRep
+      console.log("rrrrrrrrrrrrrrrrrrrrrrr")
+      console.log(this.userRep)
+    },
+      (error) => {
+        console.log(error)
+      }
+    ) 
+  }
   ngOnInit(): void {
     this.performSearch('olesigilai')
   }
 
-  performSearch(searchTerm:any) {
-    this.gitService.userRequest(searchTerm).then((success)=>{
-      this.user = this.gitService.user
-
-      console.log(this.user)
-    })
-      
-  }
+  
 }
