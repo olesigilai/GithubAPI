@@ -1,13 +1,57 @@
-<p>user works!</p>
+<app-form></app-form>
 <input name="title" #searchTerm>
 
 <button (click)="performSearch(searchTerm)">Search</button>
-<!-- <p>{{users.login}}</p>> -->
+<!-- <p>{{users.login}}</p> -->
 
 <div *ngIf = 'user'>
-<h1>Username: {{user.login}}</h1>
+
+    <div class="row">
+        <div class="col-sm">
+            <div class=" testimonial-card">
+
+                <div class="avatar pt-3" style="z-index:4;">
+                    <img src="{{user.avatar_url}}" class="width-full border bg-white" alt="avatar"
+                        style="height:auto;" alt width="260" height="260">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm">
+            <div class=" testimonial-card">
+
+                <div class="card-body">
+                    <h4 class="card-title">{{user.login}}</h4>
+                    <hr>
+                    <p>{{user.bio}}</p>
+                    <div class="row">
+                        <div class="col-sm">
+                            {{user.followers}}<p>followers</p>
+                        </div>
+                        <div class="col-sm">
+                            {{user.following}}<p>following</p>
+                        </div>
+                        <div class="col-sm">
+                            {{user.email}}
+                        </div>
+                        <div class="col-sm">
+                            {{user.location}}
+                        </div>
+                    </div>
+                    <!-- {{user.location}} -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- <h1>Username: {{user.login}}</h1>
 <h1>Bio: {{user.bio}}</h1>
 <h1>Followers: {{user.followers}}</h1>
 <h1>Following: {{user.following}}</h1>
+<h1>Location: {{user.location}}</h1> -->
+<!-- <h1>Email: {{user.email}}</h1>
+<h1>public_repos: {{user.public_repos}}</h1>
+<h1>public_gists: {{user.public_gists}}</h1>
+<h1>Url link: {{user.url}}</h1> -->
 </div>
 
