@@ -17,13 +17,14 @@ userRep?:Repository;
    }
 
   ngOnInit(): void {
-    // this.performSearch('DorcasToto')
+    this.performSearch('olesigilai')
   }
 
   performSearch(searchTerm:any) {
     this.gitService.userRequest(searchTerm).then((success)=>{
       this.user = this.gitService.user
-      console.log(this.user.bio)
+
+      console.log(this.user)
     })
       
   }
