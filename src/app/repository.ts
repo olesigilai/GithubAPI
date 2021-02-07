@@ -1,8 +1,8 @@
 export class Repository {
     constructor(
-public html_url:any,
-public name:any,
-public description:any,
-public language:any
+public html_url:string,
+public name:string,
+public description:string,
+public language:string
     ){ }
 }
