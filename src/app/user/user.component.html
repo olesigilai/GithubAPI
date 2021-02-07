@@ -49,39 +49,28 @@
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-4" *ngFor="let userRep of userRep">
+            <div class=" testimonial-card" >
 
-    <div class=" testimonial-card">
 
-        <div class="card-body">
-            <h4 class="card-title" style=" text-align:center">{{Repo.}}</h4>
-            <hr>
-            <div  style="text-align: center;">
-        <p>Bio</p>
-            <p>{{user.bio}}</p>
+                <div class="card-body">
+                    <h4 class="card-title" style=" text-align:center">{{userRep.name}}</h4>
+                    <hr>
+                    <div  style="text-align: center;">
+                       <p>{{userRep.html_url}}</p>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm">
+                            <p>followers</p>
+                            {{userRep.language}}
+                        </div>
+                        </div>
+                    </div>
             </div>
-            <hr>
-            <div class="row">
-                <div class="col-sm">
-                    <p>followers</p>
-                    {{user.followers}}
-                </div>
-                <div class="col-sm">
-                    <p>following</p>
-                    {{user.following}}
-                </div>
-                <div class="col-sm">
-                    <p>Email</p>
-                    {{user.email}}
-                </div>
-                <div class="col-sm">
-                    <p>Location</p>{{user.location}}
-                </div>
-            </div>
-            </div>
+        </div>
     </div>
+    
 </div>
 </div>
-
-
-
-
