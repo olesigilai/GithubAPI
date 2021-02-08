@@ -30,7 +30,7 @@ export class GitService {
       email: string;
      
     }
-    let headers = new HttpHeaders({'Authorization':'token ' + '9bc66b4bc9bfe51d075dc012c8ff2a09f7dea40f'})
+    let headers = new HttpHeaders({'Authorization':'token ' + '6409b6876d39c5cdcf9e6ea68dd949045d757976'})
     let options={headers:headers}
     let final_url =environment.apiUrl + search_term;
     let promise = new Promise((resolve, reject) => {
@@ -58,7 +58,7 @@ displayRepos(user:any) {
   }
   
   
-  let url = environment.apiUrl  + user + '/repos' + '?access_token=' + '9bc66b4bc9bfe51d075dc012c8ff2a09f7dea40f';
+  let url = environment.apiUrl  + user + '/repos' + '?access_token=' + '6409b6876d39c5cdcf9e6ea68dd949045d757976';
   let promise = new Promise((resolve, reject) => {
     this.http.get<apiResponse>(url).toPromise().then(response => {
       this.userRep = response;
