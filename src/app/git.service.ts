@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { from } from 'rxjs';
 import { User } from './user';
 import { Repository } from './repository';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders} from '@angular/common/http';
 import { environment } from '../environments/environment';
 
 @Injectable({
@@ -30,15 +30,18 @@ export class GitService {
       email: string;
      
     }
-    let final_url =
-      environment.apiUrl + search_term + '?access_token=' + environment.apiKey;
+    let headers = new HttpHeaders({'Authorization':'token ' + environment.apiKey})
+    let options={headers:headers}
+    let final_url =environment.apiUrl + search_term;
     let promise = new Promise((resolve, reject) => {
-      this.http.get<ApiResponse>(final_url).toPromise().then((response) => { this.user = response;
+      this.http.get<ApiResponse>(final_url,options).toPromise().then((response) => { this.user = response;
             
             resolve();
+            console.log(this.user)
           },
           (error) => {
             reject();
+            console.log(error)
           }
         );
     });
@@ -63,6 +66,7 @@ displayRepos(user:any) {
 
     }, error => {
       reject();
+      console.log(error)
     })
 
   });
