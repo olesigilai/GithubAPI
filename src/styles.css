@@ -8,10 +8,20 @@ body{
 }
 
 #card{
-    background-color: grey;
+    background-color:aliceblue;
 }
 p{
     color:black;
     font-size: 32px;
     font-family: 'Jomhuria', cursive;
+}
+#input{
+    margin: 3px;
+}
+#card2 :hover{
+background-color: rgb(101, 155, 202);
+}
+h1:hover{
+    font-size: 5pc;
+    font-family: 'Potta One', cursive;
 }
